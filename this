@@ -1,0 +1,181 @@
+
+
+
+#include<iostream>
+using namespace std;
+
+//declaring functions
+void homescreen (void);//menu
+int shopping (int& hardcover, int& paperback, int& prime, int& price); //pass by referance
+int calculator (int answer); //return
+void guessingGame (int guess);//pass by variable 
+string translator (string& change);//pass by referance
+int profile (string myArray[2][4], string name);//arrays in functions
+int multiplication (int multArray[2], int num1);//arrays in functions
+int quiz (string quizArray[2][4], string names);//arrays in functions
+int about (string& name2);//pass by referance
+int movies(int& numKid, int& numAdu);
+void totalCost(int totalA, int totalK, int totalF);
+//void totalCost
+
+//starting the main function
+main()
+{
+
+   int screen;
+   int hard, paper, primes, price;
+   int theAnswer;
+   int theGuess;
+   string theChange;
+   string theArray[2][4], theName;
+   int theMult[2], theNum1;
+   int quizArray[2][4], theNames;
+   int theName2;
+   int password;
+   int num1;
+   
+   
+
+do{
+    cout<<" Enter your password for your Decagon Phone\n";
+    cin>>password;
+    
+    if(password!=1234) {
+        cout<<"TRY AGAIN\n";
+        
+    }
+}while(password!=1234);
+
+do{
+    
+    
+   cout<<"Enter which app you would like";
+   cin>>num1;
+
+		if(option ==1)
+		{
+			//Function 2 - food choices and price (+= so that they can return to it if they need to add more food)
+			foodCost += food(g);
+			//clearing the screen of any menus that might have been left up
+			system("cls");	
+		}
+		
+		//calling the option to choose a movie 	
+		else if(option ==2)
+		{
+			//Function 3 - movie choices and price
+			movies(kids, adults);
+			//clearing the screen of any menus that might have been left up
+			system("cls");	
+		}	
+		//ending the program
+		else if (option ==3)
+		{
+			cout<<"Thank you!";
+		}
+		
+	}while(option < 3);
+	
+// Function 4 - outputting the total cost/receipt 
+	totalCost(kids,adults, foodCost);
+}
+
+void menu (void)
+{
+	//telling the user their options
+	cout<<"Your options are:\n 1- Place a Food Order\n 2- Choose a Movie\n 3- Total Owed Amount\n";
+	
+}
+
+float food(float f)
+{
+	//delcaring the variables
+	int fChoice, k=0;
+	char YN;
+	
+	//while the user still wants to, it will ask for which food they want and then add prices based on it
+	do{
+		//showing the options and then asking for which one they want
+		cout<<"\n\nYour food options are\n 1- Popcorn ($5)\n 2- Burger ($4)\n 3- Candy ($3)";
+		cout<<"\nPlease enter your choice \n --> ";
+		cin>>fChoice;
+		
+		//adding the correct price depending on the option
+		if(fChoice==1)
+		f+=5;
+		//adding the correct price depending on the option
+		else if(fChoice==2)
+		f+=4;
+		//adding the correct price depending on the option
+		else if(fChoice==3)
+		f+=3;
+		//adding the correct price depending on the option
+		else
+		cout<<"\nThat was not an option please try again.";
+		
+		//asking if the user wants to get more food, and ending the loop if they dont
+		cout<<"\n\nWould you like to order more food? Enter Y for Yes or N for No\n --> ";
+		cin>>YN;
+	
+		//if the user picks y or Y, it will stay in the loop
+		if(YN=='Y'||YN=='y')
+		{
+			k=1;
+		}
+		
+		//if they pick ANYTHING else it assumes no and leaves the loop
+		else
+		k=-1;
+	}while(k>=0);
+	
+	return f;
+}
+
+int movies(int& numKid, int& numAdu)
+{
+	//declaring the variables
+	int mChoice;
+	
+	//getting the number of kids tickets 
+	cout<<"Kids tickets are $10. How many do you want? \n --> ";
+	cin>>numKid;
+	
+	//getting the number of adult tickets
+	cout<<"\n\nAdult tickets are $15. How many do you want? \n --> ";
+	cin>>numAdu;
+	
+	//clearing the menu
+	system("cls");
+	
+	//getting a movie choice
+	cout<<"There are 3 movies you can choose from. \n 1. Avengers: Endgame\n 2. Avatar\n 3. Titanic";
+	cout<<"\nWhich one would you like? \n --> ";
+	cin>>mChoice;
+	
+	
+}
+
+void totalCost(int totalA, int totalK, int totalF)
+{
+	//declaring the variables
+	float total;
+	//title
+	cout<<"\nHere is a copy of your reciept:\n";
+	//multiplying kids tickets by 10 to get a price, adult tickets by 15 to get that price
+	cout<<"You have "<<totalK<<" kids tickets with a total price of $"<<totalK*10;
+	cout<<"\nYou have "<<totalA<<" adult tickets with a total price of $"<<totalA*15;
+	//divider
+	cout<<"\n---------------------------------------------------\n";
+	//total food cost
+	cout<<"Your total food cost is $"<<totalF;
+	//calculating grand total before tax
+	total = (totalK*10)+(totalA*15)+(totalF);
+	//printing total before tax
+	cout<<"\n\n Your total cost before tax is $"<<total;
+	//printing tax
+	cout<<"\nTax is $"<<total*0.13;
+	//printing total with tax
+	cout<<"\n\nYour grand total is $"<<total*1.13;
+	//end
+	cout<<"\t\t\n\nThank you for visiting our movie theater!\n";
+}
