@@ -1,0 +1,165 @@
+
+
+
+#include<iostream>
+using namespace std;
+
+//declaring functions
+void homescreen (void);//menu
+int shopping (int& hardcover, int& paperback, int& prime, int& price); //pass by referance
+int calculator (int answer, int num55, int num66, char ops); //return
+void guessingGame (int guess);//pass by variable 
+string translator (string& change);//pass by referance
+int profile (string myArray[2][4], string name);//arrays in functions
+int multiplication (int multArray[2], int num1);//arrays in functions
+int quiz (string quizArray[2][4], string names);//arrays in functions
+int about (string& name2);//pass by referance
+int movies(int& numKid, int& numAdu);
+void totalCost(int totalA, int totalK, int totalF);
+//void totalCost
+
+//starting the main function
+main()
+{
+
+   int screen;
+   int hard, paper, primes, prices;
+   int calculate, theAnswer;
+   int theGuess;
+   string theChange;
+   string theArray[2][4], theName;
+   int theMult[2], theNum1;
+   int quizArray[2][4], theNames;
+   int theName2;
+   int password;
+   int num1;
+   
+   
+
+do{
+    cout<<" Enter your password for your Decagon Phone\n";
+    cin>>password;
+    
+    if(password!=1234) {
+        cout<<"TRY AGAIN\n";
+        
+    }
+}while(password!=1234);
+
+
+    do{
+    homescreen();
+   cout<<"Enter which app you would like";
+   cin>>screen;
+   
+   
+   
+   
+   if(screen == 1){
+       shopping(hard, paper, primes, prices);
+       
+   }
+   
+   if(screen == 2){
+           
+    int num5,num6;
+    char op;
+    
+    cout<< "Enter first number: ";
+    cin>> num5;
+    cout<< "Enter  Enter operator: ";
+    cin>> op;
+    cout<< "Enter second number: ";
+    cin>> num6;
+      calculate=calculator(theAnswer, num5, num6, op);
+      //cout<<theAnswer;
+   }
+   
+   
+    }while(screen<3);
+
+
+
+}
+
+void homescreen (void) {
+    
+    cout<<"Select a game by choosing the number";
+    cout<<"1 or 2";
+  
+}
+
+
+int shopping (int& hardcover, int& paperback, int& prime, int& price) //pass by referance
+{ 
+    int num30;
+    int book;
+    int total;
+    int type;
+    int delivery;
+
+cout<<"Welcome to the C++ Amazon App";
+
+//picture of the textbooks
+
+cout<<"Which book would you like to purchase";
+cin>>book;
+
+if(book==1){
+    //textbook picture
+    cout<<"How many textbooks would you like to purchase";
+    cin>>num30;
+}
+if(book==2){
+    //textbook picture
+    cout<<"How many textbooks would you like to purchase";
+    cin>>num30;
+}
+if(book==3){
+    //textbook picture
+    cout<<"How many textbooks would you like to purchase";
+    cin>>num30;
+}
+if(book==4){
+    //textbook picture
+    cout<<"How many textbooks would you like to purchase";
+    cin>>num30;
+}
+
+switch (book);
+
+case('A')
+cout<<"THE WONDERS OF C++";
+cout<<"THE PRICE IS" <<num30*15<<"\n";
+total = total+num30;
+delivery=2;
+break;
+
+}
+
+int calculator (int answer, int num55, int num66, char ops) {
+    int ans=0;
+    if(ops == '+'){
+     ans = num55 + num66;
+    } else if (ops == '-'){
+        ans = num55 - num66;
+    } else if (ops == '/'){
+        ans = num55 / num66;
+    } else if (ops == '*'){
+        ans = num55 * num66;
+        //cout<<ans;
+    } else{
+      cout<<"Invalid Operation";  
+    }
+    cout<<"YOUR ANSWER IS\n";
+    cout<<ans<<"\n\n";
+    return(answer);
+}
+
+
+
+
+
+
+
+
