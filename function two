@@ -7,7 +7,7 @@ using namespace std;
 //declaring functions
 void homescreen (void);//menu
 int shopping (int& hardcover, int& paperback, int& prime, int& price); //pass by referance
-int calculator (int answer, num55, num66); //return
+int calculator (int answer, int num55, int num66, char ops); //return
 void guessingGame (int guess);//pass by variable 
 string translator (string& change);//pass by referance
 int profile (string myArray[2][4], string name);//arrays in functions
@@ -24,7 +24,7 @@ main()
 
    int screen;
    int hard, paper, primes, prices;
-   int translate, theAnswer;
+   int calculate, theAnswer;
    int theGuess;
    string theChange;
    string theArray[2][4], theName;
@@ -47,12 +47,12 @@ do{
 }while(password!=1234);
 
 
-    
-    
+    do{
+    homescreen();
    cout<<"Enter which app you would like";
-   cin>>num1;
+   cin>>screen;
    
-   homescreen();
+   
    
    
    if(screen == 1){
@@ -63,7 +63,6 @@ do{
    if(screen == 2){
            
     int num5,num6;
-    int result=0;
     char op;
     
     cout<< "Enter first number: ";
@@ -72,41 +71,54 @@ do{
     cin>> op;
     cout<< "Enter second number: ";
     cin>> num6;
-      translate=translator(theAnswer, num5, num6);
+      calculate=calculator(theAnswer, num5, num6, op);
+      //cout<<theAnswer;
    }
    
+   
+    }while(screen<3);
 
 
 
 }
 
 void homescreen (void) {
-    cout<<"Your homescreen is";
+    
+    cout<<"Select a game by choosing the number";
+    cout<<"1 or 2";
+  
 }
 
 
 int shopping (int& hardcover, int& paperback, int& prime, int& price) //pass by referance
 { 
 
-cout<<"Hello"; 
+
+
+
+
+
+
 
 }
 
-int calculator (int answer) {
-    
-    if(op == '+'){
-     result = num5 + num6;
-    } else if (op == '-'){
-        result = num5 - num6;
-    } else if (op == '/'){
-        result = num5 / num6;
-    } else if (op == '*'){
-        result = num5 * num6;
+int calculator (int answer, int num55, int num66, char ops) {
+    int ans=0;
+    if(ops == '+'){
+     ans = num55 + num66;
+    } else if (ops == '-'){
+        ans = num55 - num66;
+    } else if (ops == '/'){
+        ans = num55 / num66;
+    } else if (ops == '*'){
+        ans = num55 * num66;
+        //cout<<ans;
     } else{
       cout<<"Invalid Operation";  
     }
-    
-    return();
+    cout<<"YOUR ANSWER IS\n";
+    cout<<ans<<"\n\n";
+    return(answer);
 }
 
 
