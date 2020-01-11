@@ -93,10 +93,11 @@ void homescreen (void) {
 int shopping (int& hardcover, int& paperback, int& prime, int& price) //pass by referance
 { 
     int num30;
-    int book;
+    char book;
     int total;
     int type;
     int delivery;
+    string word;
 
 cout<<"Welcome to the C++ Amazon App";
 
@@ -105,35 +106,80 @@ cout<<"Welcome to the C++ Amazon App";
 cout<<"Which book would you like to purchase";
 cin>>book;
 
-if(book==1){
+if(book=='A'){
     //textbook picture
     cout<<"How many textbooks would you like to purchase";
     cin>>num30;
 }
-if(book==2){
+if(book=='B'){
     //textbook picture
     cout<<"How many textbooks would you like to purchase";
     cin>>num30;
 }
-if(book==3){
+if(book=='C'){
     //textbook picture
     cout<<"How many textbooks would you like to purchase";
     cin>>num30;
 }
-if(book==4){
+if(book=='D'){
     //textbook picture
     cout<<"How many textbooks would you like to purchase";
     cin>>num30;
 }
 
-switch (book);
+switch (book)
+{
 
-case('A')
+case('A'):
 cout<<"THE WONDERS OF C++";
 cout<<"THE PRICE IS" <<num30*15<<"\n";
 total = total+num30;
 delivery=2;
+cout<<" IF YOU WOULD LIKE IT HARDCOVER: ENTER hardcover";
+cin>>word;
+if(word=="hardcover"){
+    total + 3;
+}
 break;
+
+case('B'):
+cout<<"THE NEW VERSION OF C++";
+cout<<"THE PRICE IS" <<num30*16<<"\n";
+total = total+num30;
+delivery=2;
+cout<<" IF YOU WOULD LIKE IT HARDCOVER: ENTER hardcover";
+cin>>word;
+if(word=="hardcover"){
+    total + 4;
+}
+break;
+
+case('C'):
+cout<<"THE C++ BASICS AND RULES";
+cout<<"THE PRICE IS" <<num30*12<<"\n";
+total = total+num30;
+delivery=3;
+cout<<" IF YOU WOULD LIKE IT HARDCOVER: ENTER hardcover";
+cin>>word;
+if(word=="hardcover"){
+    total + 6;
+}
+break;
+
+case('D'):
+cout<<"THE C++ BOOKS FOR STUDENTS";
+cout<<"THE PRICE IS" <<num30*11<<"\n";
+total = total+num30;
+delivery=1;
+cout<<" IF YOU WOULD LIKE IT HARDCOVER: ENTER hardcover";
+cin>>word;
+if(word=="hardcover"){
+    total + 2;
+}
+break;
+}
+
+cout<<total;
 
 }
 
