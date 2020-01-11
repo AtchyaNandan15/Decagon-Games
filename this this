@@ -1,0 +1,78 @@
+
+
+
+#include<iostream>
+using namespace std;
+
+//declaring functions
+void homescreen (void);//menu
+int shopping (int& hardcover, int& paperback, int& prime, int& price); //pass by referance
+int calculator (int answer); //return
+void guessingGame (int guess);//pass by variable 
+string translator (string& change);//pass by referance
+int profile (string myArray[2][4], string name);//arrays in functions
+int multiplication (int multArray[2], int num1);//arrays in functions
+int quiz (string quizArray[2][4], string names);//arrays in functions
+int about (string& name2);//pass by referance
+int movies(int& numKid, int& numAdu);
+void totalCost(int totalA, int totalK, int totalF);
+//void totalCost
+
+//starting the main function
+main()
+{
+
+   int screen;
+   int hard, paper, primes, prices;
+   int theAnswer;
+   int theGuess;
+   string theChange;
+   string theArray[2][4], theName;
+   int theMult[2], theNum1;
+   int quizArray[2][4], theNames;
+   int theName2;
+   int password;
+   int num1;
+   
+   
+
+do{
+    cout<<" Enter your password for your Decagon Phone\n";
+    cin>>password;
+    
+    if(password!=1234) {
+        cout<<"TRY AGAIN\n";
+        
+    }
+}while(password!=1234);
+
+
+    
+    
+   cout<<"Enter which app you would like";
+   cin>>num1;
+   
+   homescreen();
+   
+   
+   if(screen = 1){
+       shopping(hard, paper, primes, prices);
+       
+   }
+   
+
+
+
+}
+
+void homescreen (void) {
+    cout<<"Your homescreen is";
+}
+
+
+int shopping (int& hardcover, int& paperback, int& prime, int& price) //pass by referance
+{ 
+
+cout<<"Hello"; 
+
+}
