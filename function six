@@ -1,0 +1,507 @@
+
+
+
+#include<iostream>
+using namespace std;
+
+//declaring functions
+void homescreen (void);//menu
+int shopping (int& hardcover, int& paperback, int& prime, int& price); //pass by referance
+int calculator (int answer, int num55, int num66, char ops); //return
+int game (int& madlibs);
+void guessingGame (int guess);//pass by variable 
+string translator (string change);//pass by referance
+int profile (string myArray[2][4], string name);//arrays in functions
+void multiplication (int multArray[]);//arrays in functions
+//string quiz (string quizzes[2][5]);//arrays in functions
+int about (string& name2);//pass by referance
+//void totalCost
+
+//starting the main function
+main()
+{
+
+   int screen;
+   int hard, paper, primes, prices;
+   int calculate, theAnswer;
+   int theGuess;
+   string translate, theChange;
+   string theArray[2][5];  
+   int theMult[10]={1,2,3,4,5,6,7,8,9,10};
+   string quizArray[2][5]={{"number","letter","decimal","character","large"},{"int","string","float", "char","long"}};
+   int theName2;
+   int password;  
+   int num1;
+   int madLibs; 
+   int ans;
+   int games;
+   
+   
+
+do{
+    cout<<" Enter your password for your Decagon Phone\n";
+    cin>>password;
+    
+    if(password!=1234) {
+        cout<<"TRY AGAIN\n";
+        
+    }
+}while(password!=1234);
+
+
+    do{
+    homescreen();
+   cout<<"Enter which app you would like";
+   cin>>screen;
+   
+   
+   
+   
+   if(screen == 1){
+       shopping(hard, paper, primes, prices);
+       
+   }
+   
+   if(screen == 2){
+           
+    int num5,num6;
+    char op;
+    
+    cout<< "Enter first number: ";
+    cin>> num5;
+    cout<< "Enter  Enter operator: ";
+    cin>> op;
+    cout<< "Enter second number: ";
+    cin>> num6;
+      calculate=calculator(theAnswer, num5, num6, op);
+      //cout<<theAnswer;
+   }
+   
+   if(screen==3){
+  
+       translate=translator(theChange);
+       cout<<theChange;
+
+   }
+   
+   if(screen=4){
+       
+      multiplication (theMult);
+
+       
+   }
+   
+    }while(screen<20);
+
+  
+  if(screen=5){
+ 
+      
+      game(madLibs);
+
+      
+      
+  }
+
+
+}
+
+void homescreen (void) {
+    
+    cout<<"Select a game by choosing the number";
+    cout<<"1 or 2";
+  
+}
+
+
+//string quiz (string quizzes[2][5]) {//the quiz function
+    
+    
+   //}
+
+int shopping (int& hardcover, int& paperback, int& prime, int& price) //pass by referance
+{ 
+    int num30;
+    char book;
+    int total=0;
+    int type;
+    int delivery;
+    string word;
+    int subtotal;
+    int cover;
+    
+
+cout<<"Welcome to the C++ Amazon App";
+
+//picture of the textbooks
+
+cout<<"Which book would you like to purchase";
+cin>>book;
+
+if(book=='A'){
+    //textbook picture
+    cout<<"How many textbooks would you like to purchase";
+    cin>>num30;
+}
+if(book=='B'){
+    //textbook picture
+    cout<<"How many textbooks would you like to purchase";
+    cin>>num30;
+}
+if(book=='C'){
+    //textbook picture
+    cout<<"How many textbooks would you like to purchase";
+    cin>>num30;
+}
+if(book=='D'){
+    //textbook picture
+    cout<<"How many textbooks would you like to purchase";
+    cin>>num30;
+}
+
+switch (book)
+{
+
+case('A'):
+cout<<"THE WONDERS OF C++";
+cout<<"THE PRICE IS" <<num30*15<<"\n";
+
+total = total+num30*15;
+delivery=2;
+cout<<total;
+cout<<" IF YOU WOULD LIKE IT HARDCOVER: ENTER hardcover";
+cin>>word;
+if(word=="hardcover"){
+    cover = 3; 
+}
+else if (word=="no"){
+    
+}
+break;
+
+case('B'):
+cout<<"THE NEW VERSION OF C++";
+cout<<"THE PRICE IS" <<num30*16<<"\n";
+total = total+num30*16;
+delivery=2;
+cout<<" IF YOU WOULD LIKE IT HARDCOVER: ENTER hardcover";
+cin>>word;
+if(word=="hardcover"){
+    cover = 3; 
+}
+else if (word=="no"){
+    
+}
+
+break;
+
+case('C'):
+cout<<"THE C++ BASICS AND RULES";
+cout<<"THE PRICE IS" <<num30*12<<"\n";
+total = total+num30*16;
+delivery=3;
+cout<<" IF YOU WOULD LIKE IT HARDCOVER: ENTER hardcover";
+cin>>word;
+if(word=="hardcover"){
+    cover = 3; 
+}
+else if (word=="no"){
+    
+}
+break;
+
+case('D'):
+cout<<"THE C++ BOOKS FOR STUDENTS";
+cout<<"THE PRICE IS" <<num30*11*16<<"\n";
+total = total+num30;
+delivery=1;
+cout<<" IF YOU WOULD LIKE IT HARDCOVER: ENTER hardcover";
+cin>>word;
+if(word=="hardcover"){
+    cover = 3; 
+}
+else if (word=="no"){
+    
+}
+break;
+}
+
+
+cout<<"\n<"<<delivery;
+cout<<"\n"<<total + cover;
+
+}
+
+int calculator (int answer, int num55, int num66, char ops) {
+    int ans=0;
+    if(ops == '+'){
+     ans = num55 + num66;
+    } else if (ops == '-'){
+        ans = num55 - num66;
+    } else if (ops == '/'){
+        ans = num55 / num66;
+    } else if (ops == '*'){
+        ans = num55 * num66;
+        //cout<<ans;
+    } else{
+      cout<<"Invalid Operation";  
+    }
+    cout<<"YOUR ANSWER IS\n";
+    cout<<ans<<"\n\n";
+    return(answer);
+    
+    
+}
+
+string translator (string change){
+
+int len;
+int i;
+
+
+     int w; 
+       
+       cout<<"Enter a word";
+       cin>>change;
+       
+       for(w=0;w<change.length();w++){
+           change[w]=tolower(change[w]);
+           
+       }
+
+len=change.length();
+for(i=0;i<len;i++){
+    
+if(change[i]=='a'){
+    change[i]='~';
+}
+
+if(change[i]=='b'){
+    change[i]='@';
+}
+
+if(change[i]=='c'){
+    change[i]='#';
+}
+
+if(change[i]=='d'){
+    change[i]='$';
+}
+
+if(change[i]=='e'){
+    change[i]='%';
+}
+
+if(change[i]=='f'){
+    change[i]='^';
+}
+
+if(change[i]=='g'){
+    change[i]='&';
+}
+
+if(change[i]=='h'){
+    change[i]='*';
+}
+
+if(change[i]=='i'){
+    change[i]='(';
+}
+
+if(change[i]=='j'){
+    change[i]=')';
+}
+
+if(change[i]=='k'){
+    change[i]='_';
+}
+
+if(change[i]=='l'){
+    change[i]='-';
+}
+
+if(change[i]=='m'){
+    change[i]='+';
+}
+
+if(change[i]=='n'){
+    change[i]='=';
+}
+
+if(change[i]=='o'){
+    change[i]='[';
+}
+
+if(change[i]=='p'){
+    change[i]=':';
+}
+
+if(change[i]=='q'){
+    change[i]='<';
+}
+
+if(change[i]=='r'){
+    change[i]='?';
+}
+
+if(change[i]=='s'){
+    change[i]=';';
+}
+
+if(change[i]=='t'){
+    change[i]=',';
+}
+
+if(change[i]=='u'){
+    change[i]='.';
+}
+
+if(change[i]=='v'){
+    change[i]='|';
+}
+
+if(change[i]=='w'){
+    change[i]='}';
+}
+
+if(change[i]=='x'){
+    change[i]=']';
+}
+
+if(change[i]=='y'){
+    change[i]='/';
+}
+
+if(change[i]=='z'){
+    change[i]='>';
+}
+
+}
+  cout<<" Your decagon secret code is\n";
+   cout<<change<<"\n";
+   return(change);
+   
+}
+
+void multiplication (int multArray[]){
+    
+    int num101;
+    int a;
+    
+  
+
+    
+    cout<<"Enter a number you want for multiplication";
+    cin>>num101;
+    
+       cout<<"\tx         |     y\n\t";
+       cout<<"--------  -------";
+       
+       for(a=0;a<=9;a++) {
+           
+           multArray[a];
+           
+           cout<<"\n\n\n\t"<<multArray[a];
+           cout<<"\t|";
+           cout<<"\t"<<multArray[a]*num101<<"\t\n";
+          
+       }
+    
+    
+    
+}
+
+    
+    int game (int& madlibs) {
+        
+        
+            string time, Noun1,Noun2,Celeberity,vehicle,animal,name,number1,fastFoodPlace,food1,food2,liquid,place,cleaningProduct,Number2,Name2,colour,PluralNoun,Emotion; 
+    
+    cout<< "enter a time: ";
+    getline(cin, time);
+    cout<< "enter a noun: ";
+    getline(cin, Noun1);
+    cout<< "enter a noun: ";
+    getline(cin, Noun2);
+    cout<< "enter a Celeberity: ";
+    getline(cin, Celeberity);
+    cout<< "enter a vehicle: ";
+    getline(cin, vehicle);
+    cout<< "enter a animal: ";
+    getline(cin, animal);
+    cout<< "enter a name: ";
+    getline(cin, name);
+    cout<< "enter a number: ";
+    getline(cin, number1);
+    cout<< "enter a fast food place: ";
+    getline(cin, fastFoodPlace);
+    cout<< "enter a food: ";
+    getline(cin, food1);
+    cout<< "enter a food: ";
+    getline(cin, food2);
+    cout<< "enter a liquid: ";
+    getline(cin, liquid);
+    cout<< "enter a place: ";
+    getline(cin, place);
+    cout<< "enter a cleaning product: ";
+    getline(cin, cleaningProduct);
+    cout<< "enter a number: ";
+    getline(cin, Number2);
+    cout<< "enter a name: ";
+    getline(cin, Name2);
+    cout<< "enter a colour: ";
+    getline(cin, colour);
+    cout<< "enter a Plural Noun: ";
+    getline(cin, PluralNoun);
+    cout<< "enter an Emotion: ";
+    getline(cin, Emotion);
+    cout<<endl;
+    cout<<endl;
+    
+    
+  cout<<"Today, I went to my first Hackathon, I woke up at " <<time<< "AM" << endl;
+  cout<<"I packed a " <<Noun1<<" and a " <<Noun2<< " in my bag to bring to the event " << endl;
+  cout<<"Me and my teamate " <<Celeberity<< " came here in a " <<vehicle<< endl;
+  cout<<"We decided to code a robot " <<animal<< endl;
+  cout<<"The robot's name is " <<name<< endl;
+  cout<<"After a while, we went to go eat lunch." << endl;
+  cout<<"We walked " <<number1<< " kilometers to get to " << fastFoodPlace<< endl;
+  cout<<"I got a delicious " <<food1<< " and " <<food2<< " smoothie " << endl;
+  cout<<"we walked back than kept working  on our robot." << endl;
+  cout<<"Then, some "<<liquid<< " spills on my shirt!." << endl;
+  cout<<"I run to the " <<place<< " to wash it off I scrubed with some " <<cleaningProduct<< " and it came off." << endl;
+  cout<<Number2<<" hours later we finished our project." << endl;
+  cout<<"We set up our project and a judge named  " <<Name2<< "came to see our robot" <<endl;
+  cout<<"The judge was wearing a " <<colour<< " shirt with some pants with " <<PluralNoun<< " on them," << endl;
+  cout<<" we were so " <<Emotion<< " about our work";
+ 
+    
+} 
+        
+    }
+
+
+
+
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
