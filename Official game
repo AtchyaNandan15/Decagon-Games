@@ -1,0 +1,943 @@
+
+
+
+#include<iostream>
+#include<string>
+#include<time.h>
+#include<Windows.h>
+#include<MMSystem.h>
+using namespace std;
+
+//declaring functions
+void homescreen (void);//menu
+int shopping (int& hardcover, int& paperback, int& prime, int& price); //pass by referance
+int calculator (int answer, int num55, int num66, char ops); //return
+int game (int& madlibs);
+int quiz(int& quizzes);
+int photos(int& picture);
+int guessingGame (int guess);//pass by variable 
+string translator (string change);//pass by referance
+int profile (string myArray[2][4], string name);//arrays in functions
+void multiplication (int multArray[]);//arrays in functions
+//string quiz (string quizzes[2][5]);//arrays in functions
+int about (string& name2);//pass by referance
+//void totalCost
+
+//starting the main function
+main()
+{
+
+   int screen;
+   int hard, paper, primes, prices;
+   int calculate, theAnswer;
+   int theGuess;
+   string translate, theChange;
+   string theArray[2][5];  
+   int theMult[10]={1,2,3,4,5,6,7,8,9,10};
+   string quizArray[2][5]={{"number","letter","decimal","character","large"},{"int","string","float", "char","long"}};
+   int theName2;
+   int password;  
+   int num1;
+   int madLibs; 
+   int ans;
+   int games;
+   string cont;
+   int questions;
+   int photo;
+   
+
+do{
+    
+    cout<<" Enter your password for your Decagon Phone\n";
+    cout<<"********************************\n";
+    
+    
+    cout<<"********************************\n";
+    cin>>password;
+    cout<<"********************************\n";
+    
+    if(password!=1234) {
+        cout<<"TRY AGAIN\n";
+        
+    }
+}while(password!=1234);
+
+       system("cls");
+
+    do{
+    homescreen();
+   cout<<"Enter which app you would like: \n";
+   cin>>screen;
+   
+   
+   
+   
+   if(screen == 1){
+       shopping(hard, paper, primes, prices);
+   }
+   
+   if(screen == 2){
+           
+    int num5,num6;
+    char op;
+    
+    cout<< "Enter first number: ";
+    cin>> num5;
+    cout<< "Enter  Enter operator: ";
+    cin>> op;
+    cout<< "Enter second number: ";
+    cin>> num6;
+      calculate=calculator(theAnswer, num5, num6, op);
+      //cout<<theAnswer;
+      
+
+   }
+     
+
+   if(screen==4){
+  
+       translate=translator(theChange);
+       cout<<theChange;
+     
+
+   }
+   
+    if(screen==6){
+   
+   game(madLibs);
+    
+
+  }
+  
+  if(screen==5){
+      
+      guessingGame(theGuess);
+    
+
+  }
+  
+   if(screen==3){
+       
+      multiplication (theMult);
+            
+   }
+    if(screen==7){
+    	
+    	quiz(questions);
+    	
+	}
+	
+	if(screen==8){
+		
+		
+		photos(photo);
+	}
+   
+   cout<<"Enter 'GO' to Continue ........ ";
+   cin>>cont;
+          system("cls");
+
+    }while(screen<9);
+
+  
+ 
+
+
+}
+
+void homescreen (void) {
+    
+    cout<<"Select a game by choosing the number: \n";
+    
+    system("color f5");
+    
+cout<<"  _____________________________________"<<endl;
+cout<<" |                 ()                  |"<<endl;
+cout<<" |             =========               |"<<endl;
+cout<<" |_____________________________________|"<<endl;
+cout<<" |  ___________         ___________    |"<<endl;
+cout<<" | | #1        |       | #2        |   |"<<endl;
+cout<<" | | Decagon   |       | Decagon   |   |"<<endl;
+cout<<" | | Amazon    |       |Calculator |   |"<<endl;
+cout<<" | |___________|       |___________|   |"<<endl;
+cout<<" |  ___________         ___________    |"<<endl;
+cout<<" | | #3        |       | #4        |   |"<<endl;
+cout<<" | |Math       |       | Decagon   |   |"<<endl;
+cout<<" | |Learning   |       |Transaltor |   |"<<endl;
+cout<<" | |___________|       |___________|   |"<<endl;
+cout<<" |  ___________         ___________    |"<<endl;
+cout<<" | | #5        |       | #6        |   |"<<endl;
+cout<<" | |   Guess   |       | Mad       |   |"<<endl;
+cout<<" | |  the  #   |       | Libs      |   |"<<endl;
+cout<<" | |___________|       |___________|   |"<<endl;
+cout<<" |                                     |"<<endl;
+cout<<" | _____________        ____________   |"<<endl;
+cout<<" | | #7        |       | #8        |   |"<<endl;
+cout<<" | |   Quiz    |       | Photos    |   |"<<endl;
+cout<<" | |           |       |           |   |"<<endl;
+cout<<" | |___________|       |___________|   |"<<endl;
+cout<<" |                ___                  |"<<endl;
+cout<<" |               |   |                 |"<<endl;
+cout<<" |               |___|                 |"<<endl;
+cout<<" |_____________________________________|"<<endl;
+           
+
+  
+}
+
+
+//string quiz (string quizzes[2][5]) {//the quiz function
+    
+    
+   //}
+
+int shopping (int& hardcover, int& paperback, int& prime, int& price) //pass by referance
+{     
+
+    int num30;
+    char book;
+    int total=0;
+    int type;
+    int delivery;
+    string word;
+    int subtotal;
+    int cover;
+    
+       system("cls");
+
+cout<<"Welcome to the C++ Amazon App";
+
+//picture of the textbooks
+cout<<"Enter 'A' if you would like to purchase this book\n\n";
+cout<<"    ,   ,"<<endl;
+cout<<"   /////|"<<endl;
+cout<<"  /////+|"<<endl;
+cout<<" /////+ |"<<endl;
+cout<<"|~~~|c  |"<<endl;
+cout<<"| C |   |"<<endl;
+cout<<"| + |   |"<<endl;
+cout<<"| + |  W|"<<endl;
+cout<<"|NEW| E |"<<endl;
+cout<<"|EDI|N /"<<endl;
+cout<<"|TIO| /"<<endl;
+cout<<"| N |/"<<endl;
+cout<<"'---'  By:Christopher Johnson\n\n\n";
+
+cout<<"Enter 'B' if you would like to purchase this book\n\n";
+
+cout<<"   ,   ,"<<endl;
+cout<<"  /////|"<<endl;
+cout<<" /////+|"<<endl;
+cout<<" /////+ |"<<endl;
+cout<<"|~~~|c  |"<<endl;
+cout<<"| C |  E|"<<endl;
+cout<<"| + |  L|"<<endl;
+cout<<"| + |  I|"<<endl;
+cout<<"| E |  T|"<<endl;
+cout<<"| L |  E|"<<endl;
+cout<<"| I |  /"<<endl;
+cout<<"| T | /"<<endl;
+cout<<"| E |/"<<endl;
+cout<<"'---"<<endl;
+cout<<"          By:Christopher Johnson\n\n\n";
+
+
+cout<<"Enter 'C' if you would like to purchase this book\n\n";
+
+
+cout<<"    ,   ,"<<endl;
+cout<<"   /////|"<<endl;
+cout<<"  ///// |"<<endl;
+cout<<" /////  |"<<endl;
+cout<<"|~~~|   |"<<endl;
+cout<<"|===|  +|"<<endl;
+cout<<"| C | + |"<<endl;
+cout<<"| + |C  |"<<endl;
+cout<<"| + | 1 |"<<endl;
+cout<<"| # |# /"<<endl;
+cout<<"| 1 | /"<<endl;
+cout<<"|===|/"<<endl;
+cout<<"'---'  By:Christopher Johnson\n\n\n";
+
+
+cout<<"Enter 'D' if you would like to purchase this book\n\n";
+
+cout<<"    ,   ,"<<endl;
+cout<<"   /////|"<<endl;
+cout<<"  ///// |"<<endl;
+cout<<" /////  |"<<endl;
+cout<<"|~~~|   |"<<endl;
+cout<<"|===|  +|"<<endl;
+cout<<"| C | + |"<<endl;
+cout<<"| + |C  |"<<endl;
+cout<<"| + | 2 |"<<endl;
+cout<<"| # |# /"<<endl;
+cout<<"| 2 | /"<<endl;
+cout<<"|===|/"<<endl;
+cout<<"'---'  By:Christopher Johnson\n\n\n";
+
+
+cout<<"Which book would you like to purchase: ";
+cin>>book;
+       system("cls");
+
+if(book=='A'){
+ 
+cout<<"   ,   ,"<<endl;
+cout<<"  /////|"<<endl;
+cout<<" /////+|"<<endl;
+cout<<" /////+ |"<<endl;
+cout<<"|~~~|c  |"<<endl;
+cout<<"| C |  E|"<<endl;
+cout<<"| + |  L|"<<endl;
+cout<<"| + |  I|"<<endl;
+cout<<"| E |  T|"<<endl;
+cout<<"| L |  E|"<<endl;
+cout<<"| I |  /"<<endl;
+cout<<"| T | /"<<endl;
+cout<<"| E |/"<<endl;
+cout<<"'---"<<endl;
+cout<<"          By:Christopher Johnson"<<endl;
+
+    cout<<"How many textbooks would you like to purchase: ";
+    cin>>num30;
+}
+if(book=='B'){
+
+cout<<"    ,   ,"<<endl;
+cout<<"   /////|"<<endl;
+cout<<"  ///// |"<<endl;
+cout<<" /////  |"<<endl;
+cout<<"|~~~|   |"<<endl;
+cout<<"|===|  +|"<<endl;
+cout<<"| C | + |"<<endl;
+cout<<"| + |C  |"<<endl;
+cout<<"| + | 1 |"<<endl;
+cout<<"| # |# /"<<endl;
+cout<<"| 1 | /"<<endl;
+cout<<"|===|/"<<endl;
+cout<<"'---'  By:Christopher Johnson"<<endl;
+    cout<<"How many textbooks would you like to purchase: ";
+    cin>>num30;
+}
+if(book=='C'){
+    //textbook picture
+cout<<"    ,   ,"<<endl;
+cout<<"   /////|"<<endl;
+cout<<"  /////+|"<<endl;
+cout<<" /////+ |"<<endl;
+cout<<"|~~~|c  |"<<endl;
+cout<<"| C |   |"<<endl;
+cout<<"| + |   |"<<endl;
+cout<<"| + |  W|"<<endl;
+cout<<"|NEW| E |"<<endl;
+cout<<"|EDI|N /"<<endl;
+cout<<"|TIO| /"<<endl;
+cout<<"| N |/"<<endl;
+cout<<"'---'  By:Christopher Johnson"<<endl;
+    cout<<"How many textbooks would you like to purchase: ";
+    cin>>num30;
+}
+if(book=='D'){
+    //textbook picture
+cout<<"    ,   ,"<<endl;
+cout<<"   /////|"<<endl;
+cout<<"  ///// |"<<endl;
+cout<<" /////  |"<<endl;
+cout<<"|~~~|   |"<<endl;
+cout<<"|===|  +|"<<endl;
+cout<<"| C | + |"<<endl;
+cout<<"| + |C  |"<<endl;
+cout<<"| + | 2 |"<<endl;
+cout<<"| # |# /"<<endl;
+cout<<"| 2 | /"<<endl;
+cout<<"|===|/"<<endl;
+cout<<"'---'  By:Christopher Johnson"<<endl;
+    cout<<"How many textbooks would you like to purchase: ";
+    cin>>num30;
+}
+
+switch (book)
+{
+
+case('A'):
+cout<<"THE WONDERS OF C++\n\n";
+cout<<"THE PRICE IS $ " <<num30*15<<"\n";
+
+total = total+num30*15;
+delivery=2;
+cout<<total;
+cout<<" IF YOU WOULD LIKE IT HARDCOVER: ENTER 'hardcover': \n\n";
+cout<<" IF YOU WOULD LIKE PAPERBACK: ENTER 'no': \n\n";
+cin>>word;
+if(word=="hardcover"){
+    cover = 3; 
+}
+else if (word=="no"){
+    cover = 0;
+}
+break;
+
+case('B'):
+cout<<"THE NEW VERSION OF C++\n\n";
+cout<<"THE PRICE IS $ " <<num30*16<<"\n";
+total = total+num30*16;
+delivery=2;
+cout<<" IF YOU WOULD LIKE IT HARDCOVER: ENTER hardcover: \n\n";
+cout<<" IF YOU WOULD LIKE PAPERBACK: ENTER 'no': \n\n";
+
+cin>>word;
+if(word=="hardcover"){
+    cover = 3; 
+}
+else if (word=="no"){
+        cover = 0;
+}
+
+break;
+
+case('C'):
+cout<<"THE C++ BASICS AND RULES\n\n";
+cout<<"THE PRICE IS $ " <<num30*12<<"\n";
+total = total+num30*16;
+delivery=3;
+cout<<" IF YOU WOULD LIKE IT HARDCOVER: ENTER hardcover:\n\n";
+cout<<" IF YOU WOULD LIKE PAPERBACK: ENTER 'no':\n\n";
+
+cin>>word;
+if(word=="hardcover"){
+    cover = 3; 
+}
+else if (word=="no"){
+        cover = 0;
+}
+break;
+
+case('D'):
+cout<<"THE C++ BOOKS FOR STUDENTS\n\n";
+cout<<"THE PRICE IS $ " <<num30*11<<"\n";
+total = total+num30;
+delivery=1;
+cout<<" IF YOU WOULD LIKE IT HARDCOVER: ENTER hardcover: \n\n";
+cout<<" IF YOU WOULD LIKE PAPERBACK: ENTER 'no': \n\n";
+
+cin>>word;
+if(word=="hardcover"){
+    cover = 3; 
+}
+else if (word=="no"){
+        cover = 0;
+}
+break;
+}
+
+cout<<"The amount of delivery days are ";
+cout<<delivery<<"\n";
+cout<<"\n\n";
+cout<<"*************************\n";
+cout<<" Subtotal $ ";
+cout<<total + cover<< "\n\n";
+int tax;
+tax=total+cover;
+cout<<" Total $ ";
+cout<<tax*0.13 + total + cover<<"\n";
+cout<<"****************************\n";
+       
+
+
+}
+
+int calculator (int answer, int num55, int num66, char ops) {
+	
+	cout<<"WELCOME TO THE CALUCLATOR\n\n";
+	system("cls");
+     
+
+    int ans=0;
+           
+
+    if(ops == '+'){
+     ans = num55 + num66;
+    } else if (ops == '-'){
+        ans = num55 - num66;
+    } else if (ops == '/'){
+        ans = num55 / num66;
+    } else if (ops == '*'){
+        ans = num55 * num66;
+        //cout<<ans;
+    } else{
+      cout<<"Invalid Operation";  
+    }
+    cout<<"YOUR ANSWER IS\n";
+    cout<<ans<<"\n\n";
+    return(answer);
+    
+           system("cls");
+
+}
+
+string translator (string change){
+	cout<<"WELCOME TO THE SYMBOL TRANSLATOR\n\n";
+    system("cls");
+	
+	
+
+int len;
+int i;
+
+
+     int w; 
+     
+            
+
+       
+       cout<<"Enter a word: ";
+       cin>>change;
+       
+       for(w=0;w<change.length();w++){
+           change[w]=tolower(change[w]);
+           
+       }
+
+len=change.length();
+for(i=0;i<len;i++){
+    
+if(change[i]=='a'){
+    change[i]='~';
+}
+
+if(change[i]=='b'){
+    change[i]='@';
+}
+
+if(change[i]=='c'){
+    change[i]='#';
+}
+
+if(change[i]=='d'){
+    change[i]='$';
+}
+
+if(change[i]=='e'){
+    change[i]='%';
+}
+
+if(change[i]=='f'){
+    change[i]='^';
+}
+
+if(change[i]=='g'){
+    change[i]='&';
+}
+
+if(change[i]=='h'){
+    change[i]='*';
+}
+
+if(change[i]=='i'){
+    change[i]='(';
+}
+
+if(change[i]=='j'){
+    change[i]=')';
+}
+
+if(change[i]=='k'){
+    change[i]='_';
+}
+
+if(change[i]=='l'){
+    change[i]='-';
+}
+
+if(change[i]=='m'){
+    change[i]='+';
+}
+
+if(change[i]=='n'){
+    change[i]='=';
+}
+
+if(change[i]=='o'){
+    change[i]='[';
+}
+
+if(change[i]=='p'){
+    change[i]=':';
+}
+
+if(change[i]=='q'){
+    change[i]='<';
+}
+
+if(change[i]=='r'){
+    change[i]='?';
+}
+
+if(change[i]=='s'){
+    change[i]=';';
+}
+
+if(change[i]=='t'){
+    change[i]=',';
+}
+
+if(change[i]=='u'){
+    change[i]='.';
+}
+
+if(change[i]=='v'){
+    change[i]='|';
+}
+
+if(change[i]=='w'){
+    change[i]='}';
+}
+
+if(change[i]=='x'){
+    change[i]=']';
+}
+
+if(change[i]=='y'){
+    change[i]='/';
+}
+
+if(change[i]=='z'){
+    change[i]='>';
+}
+
+}
+  cout<<" Your decagon secret code is\n";
+   cout<<change<<"\n";
+   return(change);
+          
+
+}
+
+void multiplication (int multArray[]){
+	cout<<"WELCOME TO THE MUTIPLICATION LEARNING\n\n";
+	system("cls");
+        
+
+    int num101;
+    int a;
+    
+  
+
+    
+    cout<<"Enter a number you want for multiplication: ";
+    cin>>num101;
+    
+       cout<<"\tx       |       y\n";
+       cout<<"\t--------  -------\n";
+       
+       for(a=0;a<=9;a++) {
+           
+           multArray[a];
+           
+           cout<<"\t"<<multArray[a];
+           cout<<"\t|";
+           cout<<"\t"<<multArray[a]*num101<<"\t\n";
+          
+       }
+    
+           
+
+    
+}
+
+    
+    int game (int& madlibs) {
+        
+            system("cls");
+        cout<<"WELCOME TO MADLIBS\n\n";
+   string time, Noun1,Noun2,Celeberity,vehicle,animal,name,number1,fastFoodPlace,food1,food2,liquid,place,cleaningProduct,Number2,Name2,colour,PluralNoun,Emotion; 
+       
+       
+       
+    cout<< "enter a time: ";
+    getline(cin, time);
+    cout<< "enter a noun: ";
+    getline(cin, Noun1);
+    cout<< "enter a noun: ";
+    getline(cin, Noun2);
+    cout<< "enter a Celeberity: ";
+    getline(cin, Celeberity);
+    cout<< "enter a vehicle: ";
+    getline(cin, vehicle);
+    cout<< "enter a animal: ";
+    getline(cin, animal);
+    cout<< "enter a name: ";
+    getline(cin, name);
+    cout<< "enter a number: ";
+    getline(cin, number1);
+    cout<< "enter a fast food place: ";
+    getline(cin, fastFoodPlace);
+    cout<< "enter a food: ";
+    getline(cin, food1);
+    cout<< "enter a food: ";
+    getline(cin, food2);
+    cout<< "enter a liquid: ";
+    getline(cin, liquid);
+    cout<< "enter a place: ";
+    getline(cin, place);
+    cout<< "enter a cleaning product: ";
+    getline(cin, cleaningProduct);
+    cout<< "enter a number: ";
+    getline(cin, Number2);
+    cout<< "enter a name: ";
+    getline(cin, Name2);
+    cout<< "enter a colour: ";
+    getline(cin, colour);
+    cout<< "enter a Plural Noun: ";
+    getline(cin, PluralNoun);
+    cout<< "enter an Emotion: ";
+    getline(cin, Emotion);
+    cout<<endl;
+    cout<<endl;
+    
+    
+  cout<<"Today, I went to my first Hackathon, I woke up at " <<time<< "AM" << endl;
+  cout<<"I packed a " <<Noun1<<" and a " <<Noun2<< " in my bag to bring to the event " << endl;
+  cout<<"Me and my teamate " <<Celeberity<< " came here in a " <<vehicle<< endl;
+  cout<<"We decided to code a robot " <<animal<< endl;
+  cout<<"The robot's name is " <<name<< endl;
+  cout<<"After a while, we went to go eat lunch." << endl;
+  cout<<"We walked " <<number1<< " kilometers to get to " << fastFoodPlace<< endl;
+  cout<<"I got a delicious " <<food1<< " and " <<food2<< " smoothie " << endl;
+  cout<<"we walked back than kept working  on our robot." << endl;
+  cout<<"Then, some "<<liquid<< " spills on my shirt!." << endl;
+  cout<<"I run to the " <<place<< " to wash it off I scrubed with some " <<cleaningProduct<< " and it came off." << endl;
+  cout<<Number2<<" hours later we finished our project." << endl;
+  cout<<"We set up our project and a judge named  " <<Name2<< "came to see our robot" <<endl;
+  cout<<"The judge was wearing a " <<colour<< " shirt with some pants with " <<PluralNoun<< " on them," << endl;
+  cout<<" we were so " <<Emotion<< " about our work";
+ 
+           system("cls");
+
+} 
+        
+
+        int guessingGame (int guess){
+            cout<<"WELCOME TO THE GUESSING GAME\n\n";
+                 
+
+               int secretNum = (time(0)%10) + 1;
+  int guessNum;
+  int guessCount =0;
+  int guessLimit = 3;
+  bool outOfGuess = false;
+       
+
+   do{
+       
+       if ( guessCount < guessLimit) {
+           if (guessCount != 0) {
+              cout << "Your guess is wrong. Try again" << endl;
+           }
+          cout<<"Guess a number between 1 to 10: ";
+          cin>>guessNum;
+          guessCount++;
+       } else {
+          outOfGuess  = true;
+       }
+   
+   }while((guessNum != secretNum) && (!outOfGuess));
+   
+    if(outOfGuess){
+        cout<<"YOU Lose; Secret Number is "<<secretNum<<endl;
+    } else {
+        cout<<"YOU WON"<<endl;
+    }
+                    system("cls");
+
+             
+             
+        }
+
+
+int quiz(int& quizzes){
+	
+	                 
+
+	
+	int num2;
+	
+	
+	cout<<"WELCOME TO THE MATH QUIZ \n\n";
+	
+	cout<<"Enter your password ";
+	cin>>num2;
+	 int points;
+	 int num1;
+	 
+	
+	
+	if(num2==1234) {
+		
+		
+		cout<<"What is 5 + 5";
+		cin>>num1;
+		
+		
+		if(num1==10){
+			cout<<"YOUR CORRECT";
+			points++;
+		}
+		else{
+			cout<<"WRONG";
+		}
+		
+		
+		
+		
+		
+				cout<<"What is 2 + 27";
+		cin>>num1;
+		
+		
+		if(num1==29){
+			cout<<"YOUR CORRECT ";
+			points++;
+		}
+		else{
+			cout<<"WRONG ";
+		}
+		
+		
+				cout<<"What is 3*5 ";
+		cin>>num1;
+		
+		
+		if(num1==15){
+			cout<<"YOUR CORRECT ";
+			points++;
+		}
+		else{
+			cout<<"WRONG ";
+		}
+		
+				cout<<"What is 100 / 5 ";
+		cin>>num1;
+		
+		
+		if(num1==20){
+			cout<<"YOUR CORRECT ";
+			points++;
+		}
+		else{
+			cout<<"WRONG ";
+		}
+		
+		
+		
+				cout<<"What is 15 + 7 ";
+		cin>>num1;
+		
+		
+		if(num1==22){
+			cout<<"YOUR CORRECT ";
+			points++;
+		}
+		else{
+			cout<<"WRONG ";
+		}
+		
+		
+		cout<<" YOUR TOTAL POINTS ARE "<<points<<"\n";
+		
+		
+} 
+}
+	
+	int photos(int& picture){
+		
+		                
+
+		
+		cout<<"WELCOME TO YOUR PHOTOS\n\n";
+		
+		
+          cout<<"PHOTO ONE\n"; 
+cout<<"        )  \n";
+cout<<"   .-"".L,""-.  \n";
+cout<<"  ;       :.  : \n";
+cout<<"  (       7:  ) \n";
+cout<<"   :         ; \n";
+cout<<"    ""-.." ";\n\n\n";
+		
+		
+
+cout<<"PHOTO TWO\n";
+		
+cout<<"   )\n";
+cout<<"   C,\n";
+cout<<"  ( ~)\n";
+cout<<"  ( ~)\n";
+cout<<"  (~ )\n";
+cout<<"  (~~)\n";
+cout<<"   }} \n\n\n";
+		
+cout<<" PHOTO THREE\n";
+
+cout<<"     ________ \n";
+cout<<"  __(_____  <|\n"; 
+cout<<" (____ } <| <|\n";
+cout<<" (___ }  <| L`-------.\n";
+cout<<" (__ }  L`--------.  |\n";
+cout<<" (  `.    ^^^^^ |   |  |\n";
+cout<<"|     }---------'    |\n";
+cout<<"|______|____________/]\n";
+cout<<"[_____|`-.__________]\n\n\n";
+		
+		
+		cout<<" PHOTO FOUR\n";
+		
+		
+cout<<"              )   \n";
+cout<<"             (_)  \n"; 
+cout<<"            .-'-. \n";
+cout<<"            |   | \n";
+cout<<"            |   | \n";
+cout<<"            |   | \n";
+cout<<"            |   | \n";
+cout<<"          __|   |\n";
+cout<<"       .-'  |   |  `-:   : \n";
+cout<<"      :     `---'     :-' \n";
+cout<<"      `-._       _.-' \n";
+cout<<"           '""""""\n\n\n";
+		
+	cout<<"ASCII ARTY BY CHRISTOPHER JOHNSON";
+		
+		
+	}
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
